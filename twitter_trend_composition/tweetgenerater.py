@@ -1,11 +1,13 @@
 import random
+import setting
 
-class generateTweet:
+class tweetGenerator:
     def __init__(self):
-        with open('template.txt', mode='rt', encoding='utf-8') as f:
+        template = setting.TMP_PATH
+        with open(template, mode='rt', encoding='utf-8') as f:
             self.template= list(f)
 
-    def generate_tweet(self, trends):
+    def generate(self, trends):
         tweet = random.choice(self.template)
         end = []
         for trend in trends:
